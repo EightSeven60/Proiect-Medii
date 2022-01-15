@@ -15,14 +15,15 @@ namespace Restaurant.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "The Forest Man este un nou restaurant " +
+                "aici pentru a va aduce zambete, dar si pentru a va satisface fanteziile culinare.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Pagina de contact";
 
             return View();
         }
