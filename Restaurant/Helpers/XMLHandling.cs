@@ -33,7 +33,7 @@ public class XMLHandling
       
     }
    
-	public  void readProdus()
+	public static  void readProdus()
     {
         XElement xelement = XElement.Load("produs.xml");
        
@@ -53,7 +53,7 @@ public class XMLHandling
         }
         
     }
-   public void  readMeniu()
+   public static void  readMeniu()
     {
       
         XElement xelement = XElement.Load("meniu.xml");
