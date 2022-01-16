@@ -10,7 +10,7 @@ namespace TraceLib
     {
         private static List<string> Filepaths = new List<string>();   
         //add a file receiver to which you want to write before using the write function
-        public async Task AddReceiver(string filepath)
+        public async Task AddReceiverAsync(string filepath)
         {
             await Task.Run(() => {
                 try
