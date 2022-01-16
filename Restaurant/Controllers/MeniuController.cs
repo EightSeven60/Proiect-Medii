@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Restaurant.Models;
+using Restaurant.Helpers;
+using System.Threading.Tasks;
 
 namespace Restaurant.Controllers
 {
@@ -31,17 +33,20 @@ namespace Restaurant.Controllers
 
                 return RedirectToAction("Index");
             }
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in \"Create\" post method in \"Meniu Controller\"."));
             return View(msg);
         }
         public ActionResult Edit(int? id)
         {
             if (!id.HasValue)
             {
+                Task.Run(() => TraceWriter.WriteLineToTraceAsync("Id had no value in \"Edit\" get method in \"Meniu Controller\"."));
                 return HttpNotFound();
             }
             MeniuModel meniu = dbCtx.Meniuri.Find(id);
             if (null == meniu)
             {
+                Task.Run(() => TraceWriter.WriteLineToTraceAsync("\"meniu\" was null in \"Edit\" get method in \"Meniu Controller\"."));
                 return HttpNotFound();
             }
             return View(meniu);
@@ -59,7 +64,9 @@ namespace Restaurant.Controllers
                     }
                     catch(Exception ex)
                     {
-                        Console.WriteLine("Eroare");
+                        Task.Run(() => TraceWriter.WriteLineToTraceAsync("Excecption thrown.\n" +
+                            "Message: " + ex.Message +
+                            "\nStack trace: " + ex.StackTrace));
                     }
                 }
                 dbCtx.Entry(meniu).State = System.Data.Entity.EntityState.Modified;
@@ -67,6 +74,7 @@ namespace Restaurant.Controllers
                 return RedirectToAction("Index");
 
             }
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in \"Edit\" post method in \"Meniu Controller\"."));
             return View(meniu);
         }
         public ActionResult Delete(int? id)
@@ -74,11 +82,13 @@ namespace Restaurant.Controllers
             if (!id.HasValue)
             {
                 //return HttpNotFound();
+                Task.Run(() => TraceWriter.WriteLineToTraceAsync("Id had no value in \"Delete\" get method in \"Meniu Controller\"."));
                 return RedirectToAction("Index");
             }
             MeniuModel meniu = dbCtx.Meniuri.Find(id);
             if (null == meniu)
             {
+                Task.Run(() => TraceWriter.WriteLineToTraceAsync("\"meniu\" was null in \"Delete\" get method in \"Meniu Controller\"."));
                 return HttpNotFound();
             }
             return View(meniu);

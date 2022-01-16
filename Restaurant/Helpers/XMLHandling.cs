@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Restaurant.Models;
 using System.Text;
+using Restaurant.Helpers;
 public class XMLHandling
 {
     public static void incarcareXML()
@@ -36,27 +37,37 @@ public class XMLHandling
 	public static  void readProdus()
     {
         XElement xelement = XElement.Load("produs.xml");
+        if (xelement == null)
+        {
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Root element of produs.xml was null."));
+            return;
+        }
        
            using(ProdusDbContext produse = new ProdusDbContext())
-            {
+           {
 
                 foreach (var element in xelement.Elements("produs"))
                 {
                     ProdusModel p = new ProdusModel();
-                p.Nume = element.Element("nume").Value;
-                p.Gramaj = int.Parse(element.Element("masa").Value);
-                p.Unitate_masura = element.Element("udm").Value;
-                p.Cantitate = int.Parse(element.Element("cantitate").Value);
-                produse.Produse.Add(p);
-                produse.SaveChanges();
-            }
-        }
+                    p.Nume = element.Element("nume").Value;
+                    p.Gramaj = int.Parse(element.Element("masa").Value);
+                    p.Unitate_masura = element.Element("udm").Value;
+                    p.Cantitate = int.Parse(element.Element("cantitate").Value);
+                    produse.Produse.Add(p);
+                    produse.SaveChanges();
+                }
+           }
         
     }
    public static void  readMeniu()
     {
       
         XElement xelement = XElement.Load("meniu.xml");
+        if (xelement == null)
+        {
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Root element of meniu.xml was null."));
+            return;
+        }
 
         using (MeniuDbContext meniuri = new MeniuDbContext())
         {
