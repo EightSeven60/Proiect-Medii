@@ -134,6 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TraceWriter.cs" />
     <Compile Include="Helpers\XMLHandling.cs" />
     <Compile Include="Models\MeniuModel.cs" />
     <Compile Include="Models\ProdusModel.cs" />
@@ -554,6 +555,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLib\TraceLib.csproj">
+      <Project>{d3b35fe8-54ba-4102-b26a-da32894f5fcb}</Project>
+      <Name>TraceLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
