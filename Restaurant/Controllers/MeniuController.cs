@@ -39,7 +39,7 @@ namespace Restaurant.Controllers
             {
                 return HttpNotFound();
             }
-           MeniuModel meniu = dbCtx.Meniuri.Find(id);
+            MeniuModel meniu = dbCtx.Meniuri.Find(id);
             if (null == meniu)
             {
                 return HttpNotFound();
@@ -83,18 +83,21 @@ namespace Restaurant.Controllers
             }
             return View(meniu);
         }
-        [HttpPost]
-        public ActionResult Delete(MeniuModel meniu)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
             if (ModelState.IsValid)
             {
-                //dbCtx.Entry(meniu).State = System.Data.Entity.EntityState.Deleted;
-                dbCtx.Meniuri.Remove(meniu);
+
+                MeniuModel personalDetail = dbCtx.Meniuri.Find(id);
+                dbCtx.Meniuri.Remove(personalDetail);
                 dbCtx.SaveChanges();
-                return RedirectToAction("Index");
 
             }
-            return View(meniu);
+            //Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in "Delete" post method in "Meniu Controller"."));
+            return RedirectToAction("Index");
+
         }
     }
 }
