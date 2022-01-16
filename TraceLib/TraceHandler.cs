@@ -10,7 +10,7 @@ namespace TraceLib
     {
         private static List<string> Filepaths = new List<string>();   
         //add a file receiver to which you want to write before using the write function
-        public async Task AddReceiver(string filepath)
+        public async Task AddReceiverAsync(string filepath)
         {
             await Task.Run(() => {
                 try
@@ -32,10 +32,11 @@ namespace TraceLib
                 }
             });
         }
-        public async Task WriteLineAsync(string message)
+        public async Task WriteLineAsync(string message, Task taskToWaitFor = null)
         {
             await Task.Run(() =>
             {
+                if (taskToWaitFor != null) taskToWaitFor.Wait();
                 Trace.WriteLine(DateTime.Now + ": " + message);
             });
         }
