@@ -32,10 +32,11 @@ namespace TraceLib
                 }
             });
         }
-        public async Task WriteLineAsync(string message)
+        public async Task WriteLineAsync(string message, Task taskToWaitFor = null)
         {
             await Task.Run(() =>
             {
+                if (taskToWaitFor != null) taskToWaitFor.Wait();
                 Trace.WriteLine(DateTime.Now + ": " + message);
             });
         }

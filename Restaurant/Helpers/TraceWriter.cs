@@ -25,8 +25,8 @@ namespace Restaurant.Helpers
                 {
                     Console.WriteLine("Dynamic TraceLib.TraceHandler instance was null.\n");
                 }
-                Task.Run(() => trLibObj.AddReceiverAsync("D:/Rares Laptop/8 Uni/Materiale/Medii si instrumente de programare/laboratoare/Proiect3Medii/Restaurant/bin/Log.txt"));
-                Task.Run(() => trLibObj.WriteLineAsync(message));
+                Task addTask = Task.Run(() => trLibObj.AddReceiverAsync("D:/Rares Laptop/8 Uni/Materiale/Medii si instrumente de programare/laboratoare/Proiect3Medii/Restaurant/bin/Log.txt"));
+                Task.Run(() => trLibObj.WriteLineAsync(message, addTask));
             });
         }
     }
