@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
@@ -7,12 +8,17 @@ namespace TraceLib
 {
     public class TraceHandler
     {
+        private static List<string> Filepaths = new List<string>();   
         //add a file receiver to which you want to write before using the write function
-        public static async void AddReceiver(string filepath)
+        public async Task AddReceiver(string filepath)
         {
             await Task.Run(() => {
                 try
                 {
+                    if (Filepaths.Contains(filepath))
+                    {
+                        return;
+                    }
                     FileStream fileStream = new FileStream(filepath, FileMode.OpenOrCreate | FileMode.Append);
                     TextWriterTraceListener textWriterTraceListener = new TextWriterTraceListener(fileStream);
                     Trace.Listeners.Add(textWriterTraceListener);
@@ -26,7 +32,7 @@ namespace TraceLib
                 }
             });
         }
-        public static async void WriteLineAsync(string message)
+        public async Task WriteLineAsync(string message)
         {
             await Task.Run(() =>
             {
