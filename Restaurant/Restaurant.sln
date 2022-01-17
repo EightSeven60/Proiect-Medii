@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant", "Restaurant.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLib", "..\TraceLib\TraceLib.csproj", "{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoHashHelper", "..\CryptoHelper\CryptoHashHelper.csproj", "{A8B0243A-C167-429E-9572-FF39F1115754}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "..\Tester\Tester.csproj", "{AAA4D7BC-4D58-4792-A941-A9DB0DEDEC5A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8B0243A-C167-429E-9572-FF39F1115754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8B0243A-C167-429E-9572-FF39F1115754}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8B0243A-C167-429E-9572-FF39F1115754}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8B0243A-C167-429E-9572-FF39F1115754}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAA4D7BC-4D58-4792-A941-A9DB0DEDEC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAA4D7BC-4D58-4792-A941-A9DB0DEDEC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAA4D7BC-4D58-4792-A941-A9DB0DEDEC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAA4D7BC-4D58-4792-A941-A9DB0DEDEC5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
