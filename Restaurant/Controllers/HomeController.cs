@@ -27,5 +27,10 @@ namespace Restaurant.Controllers
 
             return View();
         }
+        public ActionResult ChangeLanguage(string lang)
+        {
+            Session["lang"] = lang;
+            return RedirectToAction("Index", "Home", new { language = lang });
+        }
     }
 }

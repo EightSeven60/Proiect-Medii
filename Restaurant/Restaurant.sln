@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant", "Restaurant.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLib", "..\TraceLib\TraceLib.csproj", "{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Languages", "Languages\Languages.csproj", "{FACD0DB7-5B84-45F6-8420-F951E2CFEBBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3B35FE8-54BA-4102-B26A-DA32894F5FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FACD0DB7-5B84-45F6-8420-F951E2CFEBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FACD0DB7-5B84-45F6-8420-F951E2CFEBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FACD0DB7-5B84-45F6-8420-F951E2CFEBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FACD0DB7-5B84-45F6-8420-F951E2CFEBBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

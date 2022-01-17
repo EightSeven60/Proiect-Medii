@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreeareComandaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeniuController.cs" />
     <Compile Include="Controllers\ProdusController.cs" />
@@ -136,6 +137,7 @@
     </Compile>
     <Compile Include="Helpers\TraceWriter.cs" />
     <Compile Include="Helpers\XMLHandling.cs" />
+    <Compile Include="Models\ComandaModel.cs" />
     <Compile Include="Models\MeniuModel.cs" />
     <Compile Include="Models\ProdusModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -537,6 +539,11 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Produs\Index.cshtml" />
     <Content Include="Views\Meniu\Index.cshtml" />
+    <Content Include="Views\Meniu\Create.cshtml" />
+    <Content Include="Views\Meniu\Delete.cshtml" />
+    <Content Include="Views\Meniu\Edit.cshtml" />
+    <Content Include="Views\Comanda\Index.cshtml" />
+    <Content Include="Views\CreeareComanda\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\Restaurant\v16\" />
@@ -560,6 +567,10 @@
     <ProjectReference Include="..\TraceLib\TraceLib.csproj">
       <Project>{d3b35fe8-54ba-4102-b26a-da32894f5fcb}</Project>
       <Name>TraceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="Languages\Languages.csproj">
+      <Project>{facd0db7-5b84-45f6-8420-f951e2cfebbb}</Project>
+      <Name>Languages</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

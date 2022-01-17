@@ -1,0 +1,21 @@
+﻿@using Restaurant.Models;
+<h2>Calculate Simple Interest</h2>
+<fieldset>
+    <legend>Calculate Simple Interest</legend>
+    @using (Ajax.BeginForm("CalculateTotalResult", "CreeareComanda",
+                    new AjaxOptions { UpdateTargetId = "divComanda" }))
+    {
+        <div id="divComanda"></div>
+        <ol>
+            @{
+                @Html.Label("Nume meniu")
+                @Html.TextBox("txtMeniu")
+                @Html.Label("Amount")
+                @Html.TextBox("txtAmount")
+
+            }
+        </ol>
+        <button>Calculate</button>
+    }
+</fieldset>
+

@@ -1,0 +1,11 @@
+D:\programe C#\proiect3\Restaurant\Languages\bin\Debug\Languages.dll
+D:\programe C#\proiect3\Restaurant\Languages\bin\Debug\Languages.pdb
+D:\programe C#\proiect3\Restaurant\Languages\bin\Debug\ro\Languages.resources.dll
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.csproj.AssemblyReference.cache
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.Resource.resources
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.Resource.ro.resources
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.csproj.GenerateResource.cache
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.csproj.CoreCompileInputs.cache
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\ro\Languages.resources.dll
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.dll
+D:\programe C#\proiect3\Restaurant\Languages\obj\Debug\Languages.pdb

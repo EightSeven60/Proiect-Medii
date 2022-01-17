@@ -105,7 +105,7 @@ namespace Restaurant.Controllers
                 dbCtx.SaveChanges();
 
             }
-            //Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in "Delete" post method in "Meniu Controller"."));
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in \"Delete\" post method in \"Meniu Controller\"."));
             return RedirectToAction("Index");
 
         }
