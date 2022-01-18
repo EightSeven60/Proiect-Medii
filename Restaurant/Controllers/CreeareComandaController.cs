@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Restaurant.Models;
 using System.Text;
+using System.Threading.Tasks;
+//using Restaurant.Helpers;
 
 namespace Restaurant.Controllers
 {
@@ -23,28 +25,82 @@ namespace Restaurant.Controllers
         [HttpPost]
         public ActionResult CalculateTotalResult()
         {
-            int amount = Convert.ToInt32(Request["txtAmount"].ToString());
-            string numemeniu = Request["txtMeniu"].ToString();
-            MeniuDbContext mdctx = new MeniuDbContext();
-            var meniu = (from m in mdctx.Meniuri
-                         where m.Nume.Contains(numemeniu)
-                         select m).SingleOrDefault();
-            StringBuilder sbChitanta = new StringBuilder();
-            if (meniu!=null)
+            try
             {
-               
-                sbChitanta.Append("<b>Amount :</b> " + amount + "<br/>");
-                sbChitanta.Append("<b>Menu :</b> " + numemeniu + "<br/>");
-                sbChitanta.Append("<b>Total :</b> " + amount*meniu.Pret + "<br/>");
-                return Content(sbChitanta.ToString());
+                MeniuDbContext mdctx = new MeniuDbContext();
+                StringBuilder sbChitanta = new StringBuilder();
+                string idmeniuri = Request["txtMeniu"].ToString();
+                string amount = Request["txtAmount"].ToString();
+                while (amount[amount.Length - 1] == ' ')
+                {
+                    amount = amount.Remove(amount.Length - 1);
+                }
+                while (idmeniuri[idmeniuri.Length - 1] == ' ')
+                {
+                    idmeniuri = idmeniuri.Remove(idmeniuri.Length - 1);
+                }
+                var meniuri = mdctx.Meniuri.ToList();
+                List<int> idlist = new List<int>();
+                int nrid = 0;
+                foreach (string id in idmeniuri.Split(' '))
+                {
+                    idlist.Add(Convert.ToInt32(id));
+                    ++nrid;
+                }
+                List<int> amountlist = new List<int>();
+                int nramount = 0;
+                foreach (string amnt in amount.Split(' '))
+                {
+                    amountlist.Add(Convert.ToInt32(amnt));
+                    ++nramount;
+                }
+                if (nramount == nrid)
+                {
+                    int[] amountv = new int[nramount];
+                    int i = 0;
+                    foreach (var iamn in amountlist)
+                    {
+                        amountv[i] = iamn;
+                        ++i;
+                    }
+                    double suma = 0;
+                    i = 0;
+                    foreach (int id in idlist)
+                    {
+                        var meniu = mdctx.Meniuri.SingleOrDefault(m => m.Id == id);
+                        if (amountv[i] != 0)
+                        {
+                            sbChitanta.Append(amountv[i] + "x");
+                            sbChitanta.Append(meniu.Nume + "         ");
+                            sbChitanta.Append(meniu.Pret + " lei<br/>");
+                            suma += amountv[i] * meniu.Pret;
+                        }
+                        ++i;
+                    }
+                    if (suma != 0)
+                    {
+                        sbChitanta.Append("<b>Total :</b> " + suma + " lei<br/>");
+                        //return Content(sbChitanta.ToString());
+                        return View(sbChitanta.ToString());
+                    }
+                    else
+                    {
+                        sbChitanta.Append("Nu ati comandat nimic");
+                        return Content(sbChitanta.ToString());
+                    }
+                }
+                else
+                {
+                    sbChitanta.Append("Lista de id-uri si lista de numar de meniuri nu corespund");
+                    return Content(sbChitanta.ToString());
+                }
             }
-            else
+            catch(Exception ex)
             {
-                sbChitanta.Append("nu ati dat date corecte");
-                return Content(sbChitanta.ToString());
+                Task.Run(() => Helpers.TraceWriter.WriteLineToTraceAsync(ex.Message));
+                return RedirectToAction("Index");
             }
 
-            
         }
     }
 }

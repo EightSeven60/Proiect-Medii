@@ -11,9 +11,6 @@
 <table class="table">
     <tr>
         <th>
-            Nr meniuri
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Nume)
         </th>
         <th>
@@ -25,15 +22,6 @@
     @foreach (var item in Model)
     {
 <tr>
-    <td>
-        <div class="col-md-4">
-            <p>
-                <label><input type="number" min="0" value="0" name="updown" id="updown" /></label>
-            </p>
-           
-        </div>
-        
-    </td>
 
     <td>
         @Html.DisplayFor(modelItem => item.Nume)
@@ -67,13 +55,8 @@
             }
         </table>
     </td>
-    <td>
-        @Html.ActionLink("Add to cart", "Comanda", "Comanda")
-        
-    </td>
 </tr>
     }
 
 </table>
-<label>Total </label><br />
-<button>Comanda</button>
+

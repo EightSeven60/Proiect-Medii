@@ -56,6 +56,10 @@ namespace Restaurant.Controllers
         {
             if (ModelState.IsValid)
             {
+                while (meniu.Idproduse[meniu.Idproduse.Length - 1] == ' ')
+                {
+                    meniu.Idproduse = meniu.Idproduse.Remove(meniu.Idproduse.Length - 1);
+                }
                 foreach (string idstring in meniu.Idproduse.Split(' '))
                 {
                     try

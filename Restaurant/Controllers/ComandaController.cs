@@ -7,14 +7,13 @@ using Restaurant.Models;
 
 namespace Restaurant.Controllers
 {
-    public class UserController : Controller
+    public class ComandaController : Controller
     {
-        public static int iduser =0;
-        private UserDbContext dbCtxt = new UserDbContext();
-        // GET: User
+        private MeniuDbContext mdbctx = new MeniuDbContext();
+        // GET: Comanda
         public ActionResult Index()
         {
-            return View(dbCtxt.Users.ToList());
+            return View(mdbctx.Meniuri.ToList());
         }
     }
 }

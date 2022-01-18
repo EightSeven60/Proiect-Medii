@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComandaController.cs" />
     <Compile Include="Controllers\CreeareComandaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeniuController.cs" />
@@ -141,7 +142,6 @@
     <Compile Include="Models\MeniuModel.cs" />
     <Compile Include="Models\ProdusModel.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

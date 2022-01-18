@@ -14,29 +14,6 @@ namespace Restaurant
         public static void RegisterBundles(BundleCollection bundles)
         {
             XMLHandling.incarcareXML();
-            /*ProdusModel p = new ProdusModel
-            {
-                Cantitate = 2,
-                Gramaj = 500,
-                Nume = "Suc cola",
-                Unitate_masura = "ml"
-
-            };
-
-            MeniuModel m = new MeniuModel();
-            m.Nume = "Cartofi";
-            m.Pret = 22.5;
-            m.Idproduse = "1 2";
-            using (ProdusDbContext pdb = new ProdusDbContext())
-            {
-                pdb.Produse.Add(p);
-                pdb.SaveChanges();
-            }
-            using (MeniuDbContext mdb = new MeniuDbContext())
-            {
-                mdb.Meniuri.Add(m);
-                mdb.SaveChanges();
-            }*/
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                             "~/Scripts/jquery-{version}.js"));

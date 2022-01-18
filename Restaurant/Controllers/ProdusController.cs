@@ -69,16 +69,24 @@ namespace Restaurant.Controllers
 
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            try
             {
-                return HttpNotFound();
+                if (id == null)
+                {
+                    return HttpNotFound();
+                }
+                ProdusModel produs = dbCtx.Produse.Find(id);
+                if (produs == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(produs);
             }
-            ProdusModel produs = dbCtx.Produse.Find(id);
-            if (produs == null)
+            catch (Exception ex)
             {
-                return HttpNotFound();
+                Task.Run(() => Helpers.TraceWriter.WriteLineToTraceAsync(ex.Message));
+                return View();
             }
-            return View(produs);
         }
 
   
@@ -86,10 +94,18 @@ namespace Restaurant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProdusModel produs = dbCtx.Produse.Find(id);
-            dbCtx.Produse.Remove(produs);
-            dbCtx.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                ProdusModel produs = dbCtx.Produse.Find(id);
+                dbCtx.Produse.Remove(produs);
+                dbCtx.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                Task.Run(() => Helpers.TraceWriter.WriteLineToTraceAsync(ex.Message));
+                return HttpNotFound();
+            }
         }
     } 
 }
