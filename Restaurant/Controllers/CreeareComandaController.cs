@@ -68,20 +68,22 @@ namespace Restaurant.Controllers
                     foreach (int id in idlist)
                     {
                         var meniu = mdctx.Meniuri.SingleOrDefault(m => m.Id == id);
-                        if (amountv[i] != 0)
+                        if (meniu != null)
                         {
-                            sbChitanta.Append(amountv[i] + "x");
-                            sbChitanta.Append(meniu.Nume + "         ");
-                            sbChitanta.Append(meniu.Pret + " lei<br/>");
-                            suma += amountv[i] * meniu.Pret;
+                            if (amountv[i] != 0)
+                            {
+                                sbChitanta.Append(amountv[i] + "x");
+                                sbChitanta.Append(meniu.Nume + "         ");
+                                sbChitanta.Append(meniu.Pret + " lei<br/>");
+                                suma += amountv[i] * meniu.Pret;
+                            }
                         }
                         ++i;
                     }
                     if (suma != 0)
                     {
                         sbChitanta.Append("<b>Total :</b> " + suma + " lei<br/>");
-                        //return Content(sbChitanta.ToString());
-                        return View(sbChitanta.ToString());
+                        return Content(sbChitanta.ToString());
                     }
                     else
                     {

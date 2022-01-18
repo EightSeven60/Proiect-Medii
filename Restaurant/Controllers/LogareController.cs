@@ -25,7 +25,8 @@ namespace Restaurant.Controllers
             if (password == "1234")
             {
                 string mesaj = "Succes";
-                return Content(mesaj);
+                UserController.iduser = 1;
+                return RedirectToAction("Index", "Home");
             }
             else
             {
