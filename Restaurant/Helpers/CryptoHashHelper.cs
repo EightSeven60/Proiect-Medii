@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Security.Cryptography;
 using TraceLib;
+using Restaurant.Helpers;
 
 public class CryptoHashHelper
 {
@@ -24,9 +25,9 @@ public class CryptoHashHelper
         {
             TraceHandler traceHandler = new TraceHandler();
             Task addTask = Task.Run(() => traceHandler.AddReceiverAsync(LogFolderPath + "Log.txt"));
-            Task.Run(() => traceHandler.WriteLineAsync("Exception thrown while instantiating crypto provider.\n" +
-                "Message: " + ex.Message +
-                "\nStack trace: " + ex.StackTrace, addTask));
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Exception thrown while instantiating crypto provider.\n" +
+                 "Message: " + ex.Message +
+                 "\nStack trace: " + ex.StackTrace));
         }
         Provider.Key = Convert.FromBase64String(File.ReadAllText(SecretFolderpath + "key.txt"));
         Provider.IV = Convert.FromBase64String(File.ReadAllText(SecretFolderpath + "IV.txt"));
@@ -41,9 +42,9 @@ public class CryptoHashHelper
         {
             TraceHandler traceHandler = new TraceHandler();
             Task addTask = Task.Run(() => traceHandler.AddReceiverAsync(LogFolderPath + "Log.txt"));
-            Task.Run(() => traceHandler.WriteLineAsync("Exception thrown while instantiating SHA256.\n" +
-                "Message: " + ex.Message +
-                "\nStack trace: " + ex.StackTrace, addTask));
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Exception thrown while instantiating crypto provider.\n" +
+                 "Message: " + ex.Message +
+                 "\nStack trace: " + ex.StackTrace));
         }
     }
     public string Encrypt(string text)
