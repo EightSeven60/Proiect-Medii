@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Restaurant.Controllers;
 using Restaurant.Models;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Restaurant.Controllers
 {
@@ -23,19 +24,27 @@ namespace Restaurant.Controllers
         [HttpPost]
         public ActionResult TotalResult()
         {
-            double suma = CreeareComandaController.sumatotal;
-            double plata = Convert.ToDouble(Request["txtSuma"].ToString());
-            StringBuilder sb = CreeareComandaController.sb;
-            if(plata-suma >= 0)
+            try
             {
-                sb.Append("Suma :   " + plata +"<br/>");
-                sb.Append("Rest:    " + (plata - suma) + "<br/>");
+                double suma = CreeareComandaController.sumatotal;
+                double plata = Convert.ToDouble(Request["txtSuma"].ToString());
+                StringBuilder sb = CreeareComandaController.sb;
+                if (plata - suma >= 0)
+                {
+                    sb.Append("Suma :   " + plata + "<br/>");
+                    sb.Append("Rest:    " + (plata - suma) + "<br/>");
+                }
+                else
+                {
+                    sb.Append("Fonduri insuficiente!");
+                }
+                return Content(sb.ToString());
             }
-            else
+            catch(Exception ex)
             {
-                sb.Append("Fonduri insuficiente!");
+                Task.Run(() => Helpers.TraceWriter.WriteLineToTraceAsync(ex.Message));
+                return RedirectToAction("Index");
             }
-            return Content(sb.ToString());
         }
     }
 }
