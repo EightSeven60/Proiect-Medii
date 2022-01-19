@@ -215,3 +215,6 @@ D:\programe C#\proiect3\Restaurant\bin\TraceLib.pdb
 D:\programe C#\proiect3\Restaurant\bin\Languages.dll
 D:\programe C#\proiect3\Restaurant\bin\Languages.pdb
 D:\programe C#\proiect3\Restaurant\bin\ro\Languages.resources.dll
+D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\bin\Languages.dll
+D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\bin\Languages.pdb
+D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\bin\ro\Languages.resources.dll
