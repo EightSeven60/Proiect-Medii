@@ -12,8 +12,7 @@ public class CryptoHashHelper
     private ICryptoTransform Encryptor;
     private ICryptoTransform Decryptor;
     private SHA256 Hasher;
-    private string LogFolderPath = "D:/Rares Laptop/8 Uni/Materiale/Medii si instrumente de programare/laboratoare/Proiect3Medii/CryptoHelper/";
-    private string SecretFolderpath = "D:/Rares Laptop/8 Uni/Materiale/Medii si instrumente de programare/laboratoare/Proiect3Medii/CryptoHelper/";
+    private string SecretFolderpath = "D:/Rares Laptop/8 Uni/Materiale/Medii si instrumente de programare/laboratoare/Proiect3Medii/Restaurant/Helpers/";
 
     public CryptoHashHelper()
     {
@@ -23,8 +22,6 @@ public class CryptoHashHelper
         }
         catch(Exception ex)
         {
-            TraceHandler traceHandler = new TraceHandler();
-            Task addTask = Task.Run(() => traceHandler.AddReceiverAsync(LogFolderPath + "Log.txt"));
             Task.Run(() => TraceWriter.WriteLineToTraceAsync("Exception thrown while instantiating crypto provider.\n" +
                  "Message: " + ex.Message +
                  "\nStack trace: " + ex.StackTrace));
@@ -40,8 +37,6 @@ public class CryptoHashHelper
         }
         catch (Exception ex)
         {
-            TraceHandler traceHandler = new TraceHandler();
-            Task addTask = Task.Run(() => traceHandler.AddReceiverAsync(LogFolderPath + "Log.txt"));
             Task.Run(() => TraceWriter.WriteLineToTraceAsync("Exception thrown while instantiating crypto provider.\n" +
                  "Message: " + ex.Message +
                  "\nStack trace: " + ex.StackTrace));
