@@ -130,12 +130,14 @@
     <Compile Include="Controllers\ComandaController.cs" />
     <Compile Include="Controllers\CreeareComandaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogareController.cs" />
     <Compile Include="Controllers\MeniuController.cs" />
     <Compile Include="Controllers\ProdusController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CryptoHashHelper.cs" />
     <Compile Include="Helpers\TraceWriter.cs" />
     <Compile Include="Helpers\XMLHandling.cs" />
     <Compile Include="Models\ComandaModel.cs" />
@@ -220,6 +222,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Helpers\IV.txt" />
+    <Content Include="Helpers\key.txt" />
     <Content Include="Images\AripioarePicante.jpg" />
     <Content Include="Images\McChicken.png" />
     <Content Include="Images\MeniuMaxi.png" />
@@ -544,6 +548,10 @@
     <Content Include="Views\Meniu\Edit.cshtml" />
     <Content Include="Views\Comanda\Index.cshtml" />
     <Content Include="Views\CreeareComanda\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\LogareView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\Restaurant\v16\" />

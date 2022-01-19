@@ -4,17 +4,30 @@ using Restaurant.Models;
 using System.Linq;
 using Restaurant.Controllers;
 using System.Data;
+using System.Threading.Tasks;
+using Restaurant.Helpers;
 
 namespace Restaurant
 {
     public class BundleConfig
     {
-        
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             XMLHandling.incarcareXML();
-
+            UserDbContext udb = new UserDbContext();
+            if (udb.Users.Count() == 0)
+            {
+                CryptoHashHelper crypto = new CryptoHashHelper();
+                UserModel user = new UserModel()
+                {
+                    Username = "Admin",
+                    Password = crypto.GetHash("1234"),
+                    Nrtel = "0761387906"
+                };
+                udb.Users.Add(user);
+                udb.SaveChanges();
+            }
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                             "~/Scripts/jquery-{version}.js"));
 

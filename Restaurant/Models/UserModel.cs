@@ -17,7 +17,7 @@ namespace Restaurant.Models
         [Display(Name = "Username", ResourceType = typeof(Resource))]
         public string Username { get; set; }
         [Required]
-        [MaxLength(50,ErrorMessage ="Parola prea lunga")]
+        [MaxLength(256,ErrorMessage ="Parola prea lunga")]
         [Display(Name = "Password", ResourceType = typeof(Resource))]
         public string Password { get; set; }
         [Required]

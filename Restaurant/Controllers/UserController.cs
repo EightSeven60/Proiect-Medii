@@ -23,10 +23,25 @@ namespace Restaurant.Controllers
         {
             if (ModelState.IsValid)
             {
-                dbCtxt.Users.Add(msg);
-                dbCtxt.SaveChanges();
-
-                return RedirectToAction("Index");
+                using (UserDbContext udbc = new UserDbContext())
+                {
+                    var matches = from users in udbc.Users
+                                  where users.Username == msg.Username
+                                  select users;
+                    if (matches.Any())
+                    {
+                        Task.Run(() => TraceWriter.WriteLineToTraceAsync("Numele de utilizator exista deja."));
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        CryptoHashHelper crypto = new CryptoHashHelper();
+                        msg.Password = crypto.GetHash(msg.Password);
+                        dbCtxt.Users.Add(msg);
+                        dbCtxt.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in \"Create\" post method in \"User Controller\"."));
             return View(msg);
