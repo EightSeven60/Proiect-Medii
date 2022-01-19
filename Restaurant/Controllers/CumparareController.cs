@@ -31,8 +31,8 @@ namespace Restaurant.Controllers
                 StringBuilder sb = CreeareComandaController.sb;
                 if (plata - suma >= 0)
                 {
-                    sb.Append("Suma :   " + plata + "<br/>");
-                    sb.Append("Rest:    " + (plata - suma) + "<br/>");
+                    sb.Append("Suma :   " + plata + " lei <br/>");
+                    sb.Append("Rest:    " + (plata - suma) + " lei <br/>");
                 }
                 else
                 {
