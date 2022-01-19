@@ -12,6 +12,8 @@ namespace Restaurant.Controllers
 {
     public class CreeareComandaController : Controller
     {
+        public static double sumatotal =0;
+        public static StringBuilder sb;
         // GET: CreeareComanda
         public ActionResult Index()
         {
@@ -31,6 +33,7 @@ namespace Restaurant.Controllers
                 StringBuilder sbChitanta = new StringBuilder();
                 string idmeniuri = Request["txtMeniu"].ToString();
                 string amount = Request["txtAmount"].ToString();
+                StringBuilder sbNeformatat = new StringBuilder();
                 while (amount[amount.Length - 1] == ' ')
                 {
                     amount = amount.Remove(amount.Length - 1);
@@ -74,16 +77,24 @@ namespace Restaurant.Controllers
                             {
                                 sbChitanta.Append(amountv[i] + "x");
                                 sbChitanta.Append(meniu.Nume + "         ");
-                                sbChitanta.Append(meniu.Pret + " lei<br/>");
+                                sbChitanta.Append(meniu.Pret + " lei <br/>");
+                                sbNeformatat.Append(amountv[i] + "x");
+                                sbNeformatat.Append(meniu.Nume + "         ");
+                                sbNeformatat.Append(meniu.Pret + " lei\n");
                                 suma += amountv[i] * meniu.Pret;
+                                sb = sbChitanta;
                             }
                         }
                         ++i;
                     }
+                    sumatotal = suma;
                     if (suma != 0)
                     {
                         sbChitanta.Append("<b>Total :</b> " + suma + " lei<br/>");
-                        return Content(sbChitanta.ToString());
+                        sbNeformatat.Append("Total : " + suma + " lei\n");
+                        sbNeformatat.Replace('.',',');
+                        CumparareModel.Total = sbNeformatat.ToString();
+                        return RedirectToAction("Index", "Cumparare");
                     }
                     else
                     {
