@@ -30,7 +30,6 @@ D:\programe C#\proiect3\Restaurant\bin\roslyn\System.IO.Compression.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.IO.Compression.ZipFile.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.IO.FileSystem.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\programe C#\proiect3\Restaurant\bin\roslyn\System.Net.Http.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.Net.Sockets.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.Reflection.Metadata.dll
 D:\programe C#\proiect3\Restaurant\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -50,18 +49,6 @@ D:\programe C#\proiect3\Restaurant\bin\roslyn\vbc.exe.config
 D:\programe C#\proiect3\Restaurant\bin\roslyn\vbc.rsp
 D:\programe C#\proiect3\Restaurant\bin\roslyn\VBCSCompiler.exe
 D:\programe C#\proiect3\Restaurant\bin\roslyn\VBCSCompiler.exe.config
-D:\programe C#\proiect3\Restaurant\bin\Antlr3.Runtime.dll
-D:\programe C#\proiect3\Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\programe C#\proiect3\Restaurant\bin\Microsoft.Web.Infrastructure.dll
-D:\programe C#\proiect3\Restaurant\bin\Newtonsoft.Json.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.Helpers.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.Mvc.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.Optimization.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.Razor.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.WebPages.Deployment.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.WebPages.dll
-D:\programe C#\proiect3\Restaurant\bin\System.Web.WebPages.Razor.dll
-D:\programe C#\proiect3\Restaurant\bin\WebGrease.dll
 D:\programe C#\proiect3\Restaurant\bin\System.Web.Helpers.xml
 D:\programe C#\proiect3\Restaurant\bin\System.Web.Mvc.xml
 D:\programe C#\proiect3\Restaurant\bin\System.Web.Optimization.xml
@@ -77,8 +64,6 @@ D:\programe C#\proiect3\Restaurant\obj\Debug\Restaurant.csproj.CoreCompileInputs
 D:\programe C#\proiect3\Restaurant\obj\Debug\Restaurant.csproj.CopyComplete
 D:\programe C#\proiect3\Restaurant\obj\Debug\Restaurant.dll
 D:\programe C#\proiect3\Restaurant\obj\Debug\Restaurant.pdb
-D:\programe C#\proiect3\Restaurant\bin\EntityFramework.dll
-D:\programe C#\proiect3\Restaurant\bin\EntityFramework.SqlServer.dll
 D:\programe C#\proiect3\Restaurant\bin\EntityFramework.xml
 D:\programe C#\proiect3\Restaurant\bin\EntityFramework.SqlServer.xml
 C:\Users\david\Source\Repos\1\Proiect-Medii\Restaurant\bin\Restaurant.dll.config
@@ -223,3 +208,10 @@ D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\P
 D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\obj\Debug\Restaurant.csproj.CopyComplete
 D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\obj\Debug\Restaurant.dll
 D:\Rares Laptop\8 Uni\Materiale\Medii si instrumente de programare\laboratoare\Proiect3Medii\Restaurant\obj\Debug\Restaurant.pdb
+D:\programe C#\proiect3\Restaurant\bin\XML files\meniu.xml
+D:\programe C#\proiect3\Restaurant\bin\XML files\produs.xml
+D:\programe C#\proiect3\Restaurant\bin\TraceLib.dll
+D:\programe C#\proiect3\Restaurant\bin\TraceLib.pdb
+D:\programe C#\proiect3\Restaurant\bin\Languages.dll
+D:\programe C#\proiect3\Restaurant\bin\Languages.pdb
+D:\programe C#\proiect3\Restaurant\bin\ro\Languages.resources.dll

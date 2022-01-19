@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Restaurant.Controllers
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -23,13 +24,29 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("AdminProduse","Index","Produs")</li>
-                    <li>@Html.ActionLink("AdminMeniuri","Index","Meniu")</li>
-                    <li>@Html.ActionLink("AdminUsers","Index","User")</li>
+                    <li>@Html.ActionLink("Meniuri", "Index", "Comanda")</li>
+                    <li>@Html.ActionLink("Creare comanda", "Index", "CreeareComanda")</li>
+                    <li>@Html.ActionLink("Logare", "Index", "Logare")</li>
+                    @if (UserController.iduser != 0)
+                    {
+                        <li>@Html.ActionLink("AdminMeniuri", "Index", "Meniu")</li>
+                        <li>@Html.ActionLink("AdminProduse", "Index", "Produs")</li>
+                        <li>@Html.ActionLink("AdminUsers", "Index", "User")</li>
+
+                    }
                 </ul>
             </div>
         </div>
     </div>
+    @{
+        foreach (var i in Languages.LanguageManager.AvailableLanguages)
+        {
+            @Html.ActionLink(i.LanguageName, "ChangeLanguage",
+           "Home", new { lang = i.LanguageCultureName }, null)<text> </text>
+    }
+    }
+    <br />
+    @Html.Label("Nume Utilizator")
     <div class="container body-content">
         @RenderBody()
         <hr />

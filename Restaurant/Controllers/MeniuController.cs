@@ -56,6 +56,10 @@ namespace Restaurant.Controllers
         {
             if (ModelState.IsValid)
             {
+                while (meniu.Idproduse[meniu.Idproduse.Length - 1] == ' ')
+                {
+                    meniu.Idproduse = meniu.Idproduse.Remove(meniu.Idproduse.Length - 1);
+                }
                 foreach (string idstring in meniu.Idproduse.Split(' '))
                 {
                     try
@@ -105,7 +109,7 @@ namespace Restaurant.Controllers
                 dbCtx.SaveChanges();
 
             }
-            //Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in "Delete" post method in "Meniu Controller"."));
+            Task.Run(() => TraceWriter.WriteLineToTraceAsync("Model state was not valid in \"Delete\" post method in \"Meniu Controller\"."));
             return RedirectToAction("Index");
 
         }
